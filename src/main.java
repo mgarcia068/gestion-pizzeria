@@ -76,8 +76,44 @@ public class main {
                 }
 
                 case 2 -> {
+                    int opc3 = 0;
+                    System.out.println("\nORDENAR PEDIDOS:");
+                    System.out.println("1. Por tiempo de preparación");
+                    System.out.println("2. Por precio total");
+                    System.out.println("3. Por nombre del cliente");
+                    System.out.println("4. Volver al menú principal");
+                    if (sc.hasNextInt()) {
+                        opc3 = sc.nextInt();
+                        sc.nextLine();
+                    } else {
+                        System.out.println("Ingrese un número válido.");
+                        sc.nextLine();
+                        continue;
+                    }
+                    switch (opc3) {
+                        case 1 -> {
+                            Ordenador.ordenarPorTiempoPreparacion(pedidos.listaPedidos);
+                            System.out.println("Pedidos ordenados por tiempo de preparación:");
+                            pedidos.mostrarPedidos();
+                        }
+                        case 2 -> {
+                            Ordenador.ordenarPorTotal(pedidos.listaPedidos);
+                            System.out.println("Pedidos ordenados por precio total:");
+                            pedidos.mostrarPedidos();
+                        }
+                        case 3 -> {
+                            Ordenador.ordenarPorNombre(pedidos.listaPedidos);
+                            System.out.println("Pedidos ordenados por nombre del cliente:");
+                            pedidos.mostrarPedidos();
+                        }
+                        case 4 -> {
+                            System.out.println("\nVolviendo al menú principal...");
+                            break;
+                        }
+                        default ->
+                            System.out.println("\nOpción inválida. Por favor, ingrese un número entre 1 y 4.");
+                    }
 
-                    System.out.println("Gestionando orden de pedidos...");
                 }
 
                 case 3 -> {
@@ -101,6 +137,7 @@ public class main {
         String nombre;
         String desc;
         int total;
+        int tiempoPreparacion;
 
         do {
             System.out.print("\nIngrese su nombre: ");
@@ -120,8 +157,9 @@ public class main {
 
         id++;
         total = (int) (Math.random() * (10000 - 1000 + 1)) + 1000;
+        tiempoPreparacion = (int) (Math.random() * (60 - 10 + 1)) + 10;
 
-        Pedido nuevoPedido = new Pedido(nombre, desc, id, total);
+        Pedido nuevoPedido = new Pedido(nombre, desc, id, total, tiempoPreparacion);
         pedidos.agregarPedido(nuevoPedido);
         System.out.println("Pedido agregado correctamente.");
     }

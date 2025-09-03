@@ -6,14 +6,20 @@ public class Pedido {
     String nombre;
     String descripcion;
     int total;
+    int tiempoPreparacion; 
 
-    public Pedido(String nombre, String descripcion, int id, int total) {
+    
+
+    public Pedido(String nombre, String descripcion, int id, int total, int tiempoPreparacion) {
 
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.id = id;
         this.total = total;
+        this.tiempoPreparacion = tiempoPreparacion;
     }
+
+
 
     public int getId() {
         return id;
@@ -46,4 +52,13 @@ public class Pedido {
     public void setTotal(int total) {
         this.total = total;
     }
+    public int getTiempoPreparacion() {
+        return tiempoPreparacion;
+    }
+
+    public void setTiempoPreparacion(int tiempoPreparacion) {
+        this.tiempoPreparacion = tiempoPreparacion;
+    }
+
+
 }

@@ -22,7 +22,8 @@ public class Pizzeria {
 
     public void mostrarPedidos() {
         for (Pedido pedido : listaPedidos) {
-            System.out.println("\nID: " + pedido.getId() + "\nNombre: " + pedido.getNombre() + "\nDescripcion: " + pedido.getDescripcion() + "\nTotal: " + pedido.getTotal());
+            System.out.println("\nID: " + pedido.getId() + "\nNombre: " + pedido.getNombre() + "\nDescripcion: "
+                    + pedido.getDescripcion() + "\nTotal: " + pedido.getTotal() + "\nTiempo de Preparacion: " + pedido.getTiempoPreparacion() + " minutos\n");
         }
     }
 

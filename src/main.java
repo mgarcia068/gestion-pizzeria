@@ -117,8 +117,7 @@ public class main {
                 }
 
                 case 3 -> {
-
-                    System.out.println("Capturando tiempos de ejecución...");
+                    TiempoOrdenamiento.main(null);
                 }
 
                 case 4 -> {

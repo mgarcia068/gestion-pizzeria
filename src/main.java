@@ -142,16 +142,17 @@ public class main {
     public static void modificarPedido(int index) {
         System.out.println("\n¿Qué desea modificar?\n1.Nombre\n2.Descripción");
         int opcion = sc.nextInt();
+        sc.nextLine();
         try {
-            String cadena = sc.nextLine();
-            sc.next();
             switch (opcion) {
                 case 1 -> {
                     System.out.println("Ingresar nuevo nombre: ");
+                    String cadena = sc.nextLine();
                     pedidos.modificarNombre(index - 1, cadena);
                 }
                 case 2 -> {
                     System.out.println("Ingresar nueva descripción: ");
+                    String cadena = sc.nextLine();
                     pedidos.modificarDescripcion(index - 1, cadena);
                 }
                 default ->
